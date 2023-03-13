@@ -16,7 +16,7 @@ Build a line chart using your favorite program. Your X axis will be N increasing
 
 Include the image in your markdown. As a reminder, you save the image in your repo, and use [image markdown].
 
-![Alt text](vscode-local:/Users/lidudu/Desktop/NEU/CS5008_5009/CS508/hw05-sort-comparison-main/Sorts%20Analysis.png)
+![Alt text](Sorts%20Analysis.png)
 
 
 ### 2. Convinced?
@@ -27,7 +27,7 @@ The direction of the line chart and the data in the table provide convincing evi
 ### 3. Big O
 Build another table that presents the best, worst, and average case for Bubble, Selection, Insertion, Merge, and Quick. You are free to use resources for this, but please reference them if you do. 
 
-![Alt text](vscode-local:/Users/lidudu/Desktop/Screenshot%202023-03-12%20at%2011.00.20%20PM.png)
+![Alt text](Screenshot%202023-03-12%20at%2011.00.20%20PM.png)
 Source: GeeksforGeeks (https://www.geeksforgeeks.org/time-complexities-of-all-sorting-algorithms/)
 
 #### 3.2 Worst Case
