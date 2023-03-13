@@ -13,7 +13,14 @@
 // Output: The index in an array of the minimum value between a range [start,stop]
 int findMinimum(int *array, int start, int stop)
 {
-    return 0; // modify to return the index of the min value
+    int minIndex = start;
+    for(start; start < stop; start++){
+        if (array[minIndex] > array[start]) 
+        {
+            minIndex = start;
+        }      
+    }
+    return minIndex; // modify to return the index of the min value
 }
 
 
@@ -30,7 +37,20 @@ int findMinimum(int *array, int start, int stop)
 // Output: No value is returned, but 'array' should be modified to store a sorted array of numbers.
 void selectionSortIntegers(int *array, unsigned int size, int print)
 {
-    // todo: implement selection sort
+    if(size == 0){
+        return;
+    }
+    int i;
+    for(i = 0; i < size - 1; i++) {
+        int min = findMinimum(array, i, size);
+        swap(&array[min], &array[i]);
+        if(print == 1){
+            printIntArray(array, size);
+        }
+    }
+    if(print == 1){
+        printIntArray(array, size);
+    }
 }
 
 /***  Code for Insertion Sort ***/
@@ -48,8 +68,29 @@ void selectionSortIntegers(int *array, unsigned int size, int print)
 // Output: No value is returned, but 'array' should be modified to store a sorted array of numbers.
 void insertionSortIntegers(int *array, unsigned int size, int print)
 {
-    // TODO: Implement insertion sort
- 
+    if (size == 0){
+        return;
+    }
+    
+    int i;
+
+    for(i = 1; i < size; i++)
+    {
+        int n;
+        for( n = i; n >= 1; n--)
+        {
+            if (array[n] < array[n-1])
+            {
+                int temp = array[n];
+                array[n] = array[n-1];
+                array[n-1] = temp;
+            }
+        }
+        if (print == 1){
+            printIntArray(array, size);
+        }
+        
+    }
 
 }
 
@@ -68,7 +109,17 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
 //           be modified to store a sorted array of size.
 void bubbleSortIntegers(int *array, unsigned int size, int print)
 {
-    // code generated from lab
+    int i, j;
+    for(i = 0; i < size - 1; i++){
+        for(j = 0; j < size -1; j++){
+            if (array[j] > array[j + 1]){
+                swap(&array[j], &array[j + 1]);
+            }
+        }
+        if(print == 1){
+            printIntArray(array, size);
+        }
+    }
 
 }
 
@@ -87,7 +138,36 @@ void merge(int arr[], int temp[], int l, int m, int r)
     if (l > m || m + 1 > r)
         return;
 
+    int i, a, b;
+    a = l;
+    b = m + 1;
 
+    for (i = l; i <= r; i++) {
+        // conbain two subarray(index beginng to mid, mid to end).
+        // put the small one frist in to temp[array].
+        // temp star with index l and end with r.
+        if (a <= m && b <= r) {
+            if (arr[a] < arr[b]) {
+                temp[i] = arr[a];
+                a += 1;
+            } else {
+                temp[i] = arr[b];
+                b += 1;
+            }
+        } else if (a <= m) {
+            temp[i] = arr[a];
+            a += 1;
+        } else if (b <= r) {
+            temp[i] = arr[b];
+            b += 1;
+        }
+    }
+    int n;
+    for (n = l; n <= r; n++)
+    {
+        // use a for loop copy all the sort int from temp to the arr.
+        arr[n] = temp[n];
+    }
 }
 
 // To be built during week 6 lab
@@ -101,7 +181,17 @@ void merge(int arr[], int temp[], int l, int m, int r)
 // Output: No value is returned, but 'array' should be modified to store a sorted array of numbers.
 void merge_sort(int arr[], int temp[], int l, int r)
 {
-   
+   if(arr == NULL){
+    return;
+   }
+   if (r > 1){
+        // make the cueern arr to two subarray.(cut form mid)
+        int m = (l + r) / 2;
+        merge_sort(arr, temp, l, m); // cut the first subarray to two subarray again.
+        merge_sort(arr, temp, m + 1, r); // cut the second subarray to two subarray.
+        merge(arr, temp, l, m, r); // put the arr to sort.
+    }
+    return;
 }
 
 // lab build, merge sort
