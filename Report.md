@@ -60,9 +60,13 @@ Provide example of arrays that generate _best_ case for Bubble, Selection, Inser
 Order the various sorts based on which take up the most memory when sorting to the least memory. You may have to research this, and include the mathematical notation. 
 
 ~Merge Sort: Requires additional memory proportional to input size, usually O(n) or O(log n).
+
 ~Quick Sort: Uses a stack to keep track of recursive calls, typically O(log n) in average case, up to O(n) in worst case.
+
 ~Insertion Sort: Sorts elements in place, requires only a small amount of additional memory, O(1) space complexity.
+
 ~Selection Sort: Also operates in place, requires a small amount of additional memory, O(1) space complexity.
+
 ~Bubble Sort: In-place sorting algorithm, requires minimal additional memory, O(1) space complexity.
 
 ### 4. Growth of Functions
@@ -79,12 +83,27 @@ $2^n$
 $100n$  
 $2^{(n-1)}$
 #### Categories
-* 
-*
-*
-*
-*
-*
+* factorial and exponential growth
+        $n!$  -
+        $2^n$
+* exponential growth
+        $2^{n-1}$
+
+* quadratic growth
+        $5n^2+5n$  -
+        $n^2$
+
+* logarithmic growth
+        $n\log_2n$
+
+* linear growth
+        $3n$  -
+        $100n$
+
+* constant growth
+        $100$ -
+        $10000$
+
 
 ### 5. Growth of Function Language
 
@@ -93,33 +112,45 @@ Pair the following terms with the correct function in the table.
 
 | Big $O$     |  Name  |
 | ------      | ------ |
-| $O(n^3)$    |  your answer here |
-| $O(1)$      |   |
-| $O(n)$      |   |
-| $O(\log_2n)$ |   |
-| $O(n^2)$    |   |
-| $O(n!)$     |   |
-| $O(2^n)$    |   |
+| $O(n^3)$    |  Cubic |
+| $O(1)$      |  Constant |
+| $O(n)$      |  Linear |
+| $O(\log_2n)$ |  Logarithmic |
+| $O(n^2)$    |  Quadratic |
+| $O(n!)$     |  Factorial |
+| $O(2^n)$    |  Exponential |
 
 
 
 ### 6. Stable vs Unstable
 Look up stability as it refers to sorting. In your own words, describe one sort that is stable and one sort that isn't stable  
 
+A stable sorting algorithm preserves the relative order of equal elements in the input array, while an unstable sorting algorithm does not. Insertion Sort is an example of a stable algorithm, while Quick Sort is an example of an unstable algorithm.
 
 ### 6.2 When stability is needed?
 Explain in your own words a case in which you will want a stable algorithm over an unstable. Include an example. 
+
+There are many cases in which stability is important. One common example is when sorting a dataset by multiple criteria. For instance, if you have a list of people that you want to sort first by last name, and then by first name, you want to make sure that people with the same last name are sorted in the correct order based on their first name. If an unstable sorting algorithm were used, the order of people with the same last name could be changed during the sorting process, resulting in an incorrect final order. In contrast, using a stable sorting algorithm ensures that the order of people with the same last name is preserved while sorting by the secondary criterion.
 
 ### 7. Gold Thief
 
 You are planning a heist to steal a rare coin that weighs 1.0001 ounces. The problem is that the rare coin was mixed with a bunch of counter fit coins. You know the counter fit coins only weight 1.0000 ounce each. There are in total 250 coins.  You have a simple balance scale where the coins can be weighed against each other. Hint: don't think about all the coins at once, but how you can break it up into even(ish) piles. 
 
+To find the rare coin, one algorithm that can be used is the binary search algorithm. This involves dividing the coins into two equal parts and weighing them on the balance scale. If the two parts weigh the same, then the rare coin is in one of the unweighed coins. If they don't weigh the same, then the rare coin must be in the part that weighs more. The process is then repeated on that part until the rare coin is found.
+
 #### 7.1 Algorithm
 Describe an algorithm that will help you find the coin. We encourage you to use pseudo-code, but not required.
+
+1. Divide the 250 coins into two groups, each containing 125 coins.
+2. Weigh the first group of 125 coins against the second group of 125 coins.
+3. If the scales are balanced, the rare coin is in one of the remaining 125 coins. Repeat step 1 with one group of 125 coins and the remaining coins.
+4. If the scales are not balanced, the rare coin is in the lighter group of coins. Repeat step 1 with the lighter group of coins and the remaining coins.
+
 
 #### 7.2 Time Complexity
 What is the average time complexity of your algorithm? 
 
+The average time complexity of this algorithm is O(log₂(250)) or approximately 8 comparisons. This is because we are dividing the coins into two equal groups at each step, and the number of coins is reduced by half after each weighing. Therefore, we need at most 8 weighings to find the rare coin.
 
 
 <!-- links moved to bottom for easier reading in plain text (btw, this a comment that doesn't show in the webpage generated-->
