@@ -16,26 +16,54 @@ Build a line chart using your favorite program. Your X axis will be N increasing
 
 Include the image in your markdown. As a reminder, you save the image in your repo, and use [image markdown].
 
+![Alt text](vscode-local:/Users/lidudu/Desktop/NEU/CS5008_5009/CS508/hw05-sort-comparison-main/Sorts%20Analysis.png)
 
 
 ### 2. Convinced?
 Given the direction of the line chart, are you "convinced" of the complexity of each of the sorts? Why or why not?
 
+The direction of the line chart and the data in the table provide convincing evidence for the time complexity of each of the sorting algorithms. Bubble sort has the highest time complexity, selection sort and insertion sort have a lower but still steep time complexity, while merge sort and quicksort have a significantly lower time complexity. This supports the expected time complexity of each algorithm, with merge sort and quicksort being the most efficient for large data sets.
 
 ### 3. Big O
 Build another table that presents the best, worst, and average case for Bubble, Selection, Insertion, Merge, and Quick. You are free to use resources for this, but please reference them if you do. 
 
+![Alt text](vscode-local:/Users/lidudu/Desktop/Screenshot%202023-03-12%20at%2011.00.20%20PM.png)
+Source: GeeksforGeeks (https://www.geeksforgeeks.org/time-complexities-of-all-sorting-algorithms/)
 
 #### 3.2 Worst Case
 Provide example of arrays that generate _worst_ case for Bubble, Selection, Insertion, Merge Sorts
 
+~Bubble Sort: An array that is sorted in reverse order would generate the worst case for bubble sort. For example, [5, 4, 3, 2, 1].
+
+~Selection Sort: An array that is sorted in reverse order would also generate the worst case for selection sort. For example, [5, 4, 3, 2, 1].
+
+~Insertion Sort: An array that is sorted in reverse order and has the smallest element at the end of the array would generate the worst case for insertion sort. For example, [5, 4, 3, 2, 1].
+
+~Merge Sort: An array that is sorted in reverse order would generate the worst case for merge sort. For example, [5, 4, 3, 2, 1].
+
+~Quick Sort: An array that is sorted in reverse order or already sorted would generate the worst case for quick sort. For example, [5, 4, 3, 2, 1] or [1, 2, 3, 4, 5].
 
 #### 3.3 Best Case
 Provide example of arrays that generate _best_ case for Bubble, Selection, Insertion, Merge Sorts 
 
+~Bubble Sort: An array that is already sorted would generate the best case for bubble sort. For example, [1, 2, 3, 4, 5].
+
+~Selection Sort: An array that is already sorted would generate the best case for selection sort. For example, [1, 2, 3, 4, 5].
+
+~Insertion Sort: An array that is already sorted would generate the best case for insertion sort. For example, [1, 2, 3, 4, 5].
+
+~Merge Sort: An array that is already sorted would generate the best case for merge sort. For example, [1, 2, 3, 4, 5].
+
+~Quick Sort: An array that is already sorted would generate the best case for quick sort. For example, [1, 2, 3, 4, 5].
 
 #### 3.4 Memory Considerations
 Order the various sorts based on which take up the most memory when sorting to the least memory. You may have to research this, and include the mathematical notation. 
+
+~Merge Sort: Requires additional memory proportional to input size, usually O(n) or O(log n).
+~Quick Sort: Uses a stack to keep track of recursive calls, typically O(log n) in average case, up to O(n) in worst case.
+~Insertion Sort: Sorts elements in place, requires only a small amount of additional memory, O(1) space complexity.
+~Selection Sort: Also operates in place, requires a small amount of additional memory, O(1) space complexity.
+~Bubble Sort: In-place sorting algorithm, requires minimal additional memory, O(1) space complexity.
 
 ### 4. Growth of Functions
 Give the following values, place them correctly into *six* categories. Use the bullets, and feel free to cut and paste the full LatexMath we used to generate them.  
