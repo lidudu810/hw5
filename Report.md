@@ -28,6 +28,7 @@ The direction of the line chart and the data in the table provide convincing evi
 Build another table that presents the best, worst, and average case for Bubble, Selection, Insertion, Merge, and Quick. You are free to use resources for this, but please reference them if you do. 
 
 ![Alt text](Screenshot%202023-03-12%20at%2011.00.20%20PM.png)
+
 Source: GeeksforGeeks (https://www.geeksforgeeks.org/time-complexities-of-all-sorting-algorithms/)
 
 #### 3.2 Worst Case
