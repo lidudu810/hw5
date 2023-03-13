@@ -14,10 +14,11 @@
 int findMinimum(int *array, int start, int stop)
 {
     int minIndex = start;
-    for(start; start < stop; start++){
-        if (array[minIndex] > array[start]) 
+    int i;
+    for( i = start; i < stop; i++){
+        if (array[minIndex] > array[i]) 
         {
-            minIndex = start;
+            minIndex = i;
         }      
     }
     return minIndex; // modify to return the index of the min value
