@@ -6,8 +6,7 @@ Make sure to go out to at least 100,000 (more are welcome), and you have 10 diff
 You are free to write a script to run the program and build your table (then copy that table built into the markdown). If you do that, please include the script into the repo.  Note: merge sort is going to be completed in the workshop for Module 06. You can start on it now, but welcome to wait.
 
 ### Table
-| N | Bubble | Selection | Insertion | Merge | Quick |
-| :-- | :--: | :--: | :--: | :--: | :--: |
+![Alt text](Screenshot%202023-03-12%20at%2010.49.42%20PM.png)
 
 
 ## BigO Analysis  / Questions
