@@ -16,9 +16,9 @@ int findMinimum(int *array, int start, int stop)
     int minIndex = start;
     int i;
     for( i = start; i < stop; i++){
-        if (array[minIndex] > array[i]) 
+        if (array[minIndex] > array[i]) //compare this two number(minindex, and i)
         {
-            minIndex = i;
+            minIndex = i; //when find some smaller int, update the index of the int.
         }      
     }
     return minIndex; // modify to return the index of the min value
@@ -43,8 +43,8 @@ void selectionSortIntegers(int *array, unsigned int size, int print)
     }
     int i;
     for(i = 0; i < size - 1; i++) {
-        int min = findMinimum(array, i, size);
-        swap(&array[min], &array[i]);
+        int min = findMinimum(array, i, size); //find the minimum in current arry index.
+        swap(&array[min], &array[i]); //swap the smaller to current index.
         if(print == 1){
             printIntArray(array, size);
         }
@@ -77,12 +77,12 @@ void insertionSortIntegers(int *array, unsigned int size, int print)
 
     for(i = 1; i < size; i++)
     {
-        int n;
+        int n; // array from top to bottom.
         for( n = i; n >= 1; n--)
         {
             if (array[n] < array[n-1])
             {
-                int temp = array[n];
+                int temp = array[n]; //switch the index if find smothing smaller.
                 array[n] = array[n-1];
                 array[n-1] = temp;
             }
@@ -114,7 +114,7 @@ void bubbleSortIntegers(int *array, unsigned int size, int print)
     for(i = 0; i < size - 1; i++){
         for(j = 0; j < size -1; j++){
             if (array[j] > array[j + 1]){
-                swap(&array[j], &array[j + 1]);
+                swap(&array[j], &array[j + 1]); //if the current index is bigger than that, put it after the current index.
             }
         }
         if(print == 1){
@@ -144,9 +144,9 @@ void merge(int arr[], int temp[], int l, int m, int r)
     b = m + 1;
 
     for (i = l; i <= r; i++) {
-        // conbain two subarray(index beginng to mid, mid to end).
+        // add two subarray toghther (index beginng to mid, mid to end).
         // put the small one frist in to temp[array].
-        // temp star with index l and end with r.
+        // temp start with index l and end with r.
         if (a <= m && b <= r) {
             if (arr[a] < arr[b]) {
                 temp[i] = arr[a];
@@ -166,7 +166,7 @@ void merge(int arr[], int temp[], int l, int m, int r)
     int n;
     for (n = l; n <= r; n++)
     {
-        // use a for loop copy all the sort int from temp to the arr.
+        // use a for loop copy all the sort.
         arr[n] = temp[n];
     }
 }
@@ -186,9 +186,8 @@ void merge_sort(int arr[], int temp[], int l, int r)
     return;
    }
    if (r > 1){
-        // make the cueern arr to two subarray.(cut form mid)
-        int m = (l + r) / 2;
-        merge_sort(arr, temp, l, m); // cut the first subarray to two subarray again.
+        int m = (l + r) / 2; // make the current arr to two subarray.(cut the attay from mid)
+        merge_sort(arr, temp, l, m); // cut the first subarray to two subarray.
         merge_sort(arr, temp, m + 1, r); // cut the second subarray to two subarray.
         merge(arr, temp, l, m, r); // put the arr to sort.
     }
